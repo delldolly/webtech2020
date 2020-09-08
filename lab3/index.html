@@ -9,11 +9,19 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
 </head>
-<body style="font-family: 'Kanit', sans-serif;">
-    <div class="container-fluid">
+<body>
+    <div class="container-fluid h-100">
+        <div class="text-center" style="padding: 20px;color: #6b6b6b;background-color: rgb(247, 193, 201);">
+            <h3>Exercise :</h3>
+            <p>ให้นักศึกษาใช้ framework ของ Bootstrap ในการจัด layout เป็น 3 ช่อง และให้ช่องซ้ายและขวาไม่มีอะไรทั้งสิ้น 
+                ในช่องกลาง ให้สร้าง input group เพื่อรับข้อความและสีพื้นหลังเพื่อแสดงผลที่ช่องซ้ายและขวา โดยกรุ๊ปแรกให้แสดงผลด้านซ้าย 
+                กรุ๊ปที่สองให้แสดงผลด้านขวา 
+                และเมื่อหน้าจอมีขนาดเล็กลง ให้ column กลางมาอยู่เป็น column แรก จากนั้นตามด้วย column ซ้ายและขวามตามลำดับ
+            </p>
+            <p><span style="color: red;">ข้อกำหนด : </span>ห้ามเขียน css เอง ให้ใช้ class ของ Bootstrap เท่านั้น</p>
+            <p>เปลี่ยนสีพื้นหลังมันเยอะเกินไป เก็บไว้ก่อย</p>
+        </div>
         <div class="row">
             <div class="col-12 text-center">
                 <label for="bg">Change BG color:</label>
@@ -25,8 +33,10 @@
             </div>
         </div>
         <div class="row">
-            <!-- control -->
-            <div class="col-12 col-md-8 offset-md-2">
+            <!-- secord (left) -->
+            <div class="col-12 col-md-4 order-2 order-md-1" id="left"></div>
+            <!-- first (middle) -->
+            <div class="col-12 col-md-4 order-1 order-md-2">
                 <!-- for left -->
                 <div class="form-group">
                     <label for="left col">First Column: </label>
@@ -34,12 +44,11 @@
                         <input type="text" class="form-control" id="textInput1" placeholder="Text" value="left">
                         <input type="text" class="form-control" id="colorInput1" placeholder="Color" value="#b19c3b">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button" 
+                            <button class="btn btn-outline-dark" type="button" 
                             id="button-1" onclick="leftColumn()">Button</button>
                         </div>
                     </div>
                 </div>
-                
                 <!-- for right -->
                 <div class="form-group">
                     <label for="right col">Second Column: </label>
@@ -47,54 +56,28 @@
                         <input type="text" class="form-control" id="textInput2" placeholder="Text" value="right">
                         <input type="text" class="form-control" id="colorInput2" placeholder="Color" value="#83ad4e">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button" 
+                            <button class="btn btn-outline-dark" type="button" 
                             id="button-2" onclick="rightColumn()">Button</button>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- third (right) -->
+            <div class="col-12 col-md-4 order-3 order-md-3" id="right"></div>
         </div>
-
-        <div class="row justify-content-around mt-2">
-            <!-- first -->
-            <div class="col-6 col-md-5">
-                <div class="card" id="left">
-                    <div class="card-header">
-                        First Column
-                    </div>
-                    <div class="card-body">
-                        <p id="leftText"></p>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- second -->
-            <div class="col-6 col-md-5">
-                <div class="card" id="right">
-                    <div class="card-header">
-                        Second Column
-                    </div>
-                    <div class="card-body">
-                        <p id="rightText"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <script>
         function backgroundChange(num) {
             switch (num) {
                 case 1:
-                    document.getElementsByTagName("body")[0].style.backgroundColor = "#fd9898"
+                    document.getElementsByTagName("body")[0].style.backgroundColor = "yellow"
                     break;
                 case 2:
-                    document.getElementsByTagName("body")[0].style.backgroundColor = "#adf1d5"
+                    document.getElementsByTagName("body")[0].style.backgroundColor = "green"
                     break;
                 case 3:
-                    document.getElementsByTagName("body")[0].style.backgroundColor = "#ebbafa"
+                    document.getElementsByTagName("body")[0].style.backgroundColor = "blue"
                     break;
             }
         }
@@ -102,13 +85,13 @@
         function leftColumn() {
             var x = document.getElementById("textInput1").value
             var colorx = document.getElementById("colorInput1").value
-            document.getElementById("leftText").innerHTML = x
+            document.getElementById("left").innerHTML = x
             document.getElementById("left").style.backgroundColor = colorx
         }
         function rightColumn() {
             var y = document.getElementById("textInput2").value
             var colory = document.getElementById("colorInput2").value
-            document.getElementById("rightText").innerHTML = y
+            document.getElementById("right").innerHTML = y
             document.getElementById("right").style.backgroundColor = colory
         }
     </script>
