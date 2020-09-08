@@ -61,7 +61,12 @@
                 txt += "<h4 id='list-item-" + tutor[j].id + "' class='p-3 mb-2 bg-info text-white rounded'>" + tutor[j].firstname + " " + tutor[j].lastname + "</h4>";
                 txt += "<p>Age : " + tutor[j].age + "</p>";
                 txt += "<p>Tel : " + tutor[j].tel + "</p>";
-                txt += "<p>Subject : " + tutor[j].subject + "</p>";
+                txt += "<p>Subject :<ul>";
+                for (s in tutor[j].subject) {
+                    txt += "<li>" + tutor[j].subject[s] + "</li>";
+                }
+                txt += "</ul></p>"
+                
             }
             document.getElementById("scroll").innerHTML = txt;
         }
