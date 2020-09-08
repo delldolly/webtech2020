@@ -22,27 +22,15 @@
     <title>Tutor list</title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#list-data" data-offset="0">
     <div class="container-fluid">
-        <div class="text-center">
+        <div class="text-center p-4">
             <h1>Tutor list</h1>
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary" onclick="cardShow(1)">1</button>
-                <button type="button" class="btn btn-secondary" onclick="cardShow(2)">2</button>
-                <button type="button" class="btn btn-secondary" onclick="cardShow(3)">3</button>
-                <button type="button" class="btn btn-secondary" onclick="cardShow(4)">4</button>
-                <button type="button" class="btn btn-secondary" onclick="cardShow(5)">5</button>
-                <button type="button" class="btn btn-secondary" onclick="cardShow(6)">6</button>
-                <button type="button" class="btn btn-secondary" onclick="cardShow(7)">7</button>
-                <button type="button" class="btn btn-secondary" onclick="cardShow(8)">8</button>
-                <button type="button" class="btn btn-secondary" onclick="cardShow(9)">9</button>
-                <button type="button" class="btn btn-secondary" onclick="cardShow(10)">10</button>
-            </div>
         </div>
-        <div class="col-6 offset-3">
-            <div class="card">
-                <div class="card-title"></div>
-                <div class="card-body"></div>
+        <div class="row">
+            <div class="col-4 left" id="list">
+            </div>
+            <div class="col-8 scrollspy" data-spy="scroll" data-target="#list-data" data-offset="0" id="scroll">
             </div>
         </div>
     </div>
@@ -59,13 +47,24 @@
         request.open("GET", requestURL, true);
         request.send();
 
-        function myFunction(myJSON) {
-            function cardShow(x) {
-            
+        function myFunction(tutor) {
+            list = "";
+            list += "<div class='list-group' id='list-data'>"
+            for (i in tutor) {
+                list += "<a class='list-group-item list-group-item-action' href='#list-item-" + tutor[i].id + "'>" + tutor[i].firstname + " " + tutor[i].lastname + "</a>";
             }
-        }
+            list += "</div>";
+            document.getElementById("list").innerHTML = list;
 
-        
+            txt = ""
+            for (j in tutor) {
+                txt += "<h4 id='list-item-" + tutor[j].id + "' class='p-3 mb-2 bg-info text-white rounded'>" + tutor[j].firstname + " " + tutor[j].lastname + "</h4>";
+                txt += "<p>Age : " + tutor[j].age + "</p>";
+                txt += "<p>Tel : " + tutor[j].tel + "</p>";
+                txt += "<p>Subject : " + tutor[j].subject + "</p>";
+            }
+            document.getElementById("scroll").innerHTML = txt;
+        }
     </script>
 </body>
 

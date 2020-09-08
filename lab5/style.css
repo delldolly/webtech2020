@@ -1,0 +1,9 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    position: relative;
+}
+
+.scrollspy {
+    height: 65vh;
+    overflow: scroll;
+}
