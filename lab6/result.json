@@ -3,42 +3,42 @@
         "no" : 1,
         "img" : "img/1.jpg",
         "name" : "ตาหสาน เชฟบร๊ะ",
-        "team" : "Team NX"
+        "score" : "181,297"
     },
     {
         "no" : 2,
         "img" : "img/2.jpg",
         "name" : "แหนมเนือง โดดดิเห้ย",
-        "team" : "Team NNN"
+        "score" : "111,197"
     },
     {
         "no" : 3,
         "img" : "img/3.jpg",
         "name" : "เจ๊นุ้ย ตามสั่ง",
-        "team" : "Team BIV"
+        "score" : "98,049"
     },
     {
         "no" : 4,
         "img" : "img/4.jpg",
         "name" : "เนอปาง คุ้กกี้เพื่อชีวิต",
-        "team" : "Team BIV"
+        "score" : "97,052"
     },
     {
         "no" : 5,
         "img" : "img/5.jpg",
-        "name" : "นัจรุจจี้ ปีนีห้าขวบ",
-        "team" : "Team BMW"
+        "name" : "นัจรุจจี้ ปีนี้ห้าขวบ",
+        "score" : "31,396"
     },
     {
         "no" : 6,
         "img" : "img/6.jpg",
         "name" : "อาออง เป็นคนขี้อ้อน",
-        "team" : "Team NAAW"
+        "score" : "30,298"
     },
     {
         "no" : 7,
         "img" : "img/7.jpg",
         "name" : "มิวจิคกี้ หยั่กขยี้แก้ม",
-        "team" : "Team NIV"
+        "score" : "24,201"
     }
 ]

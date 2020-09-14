@@ -1,3 +1,8 @@
 body {
     font-family: 'Kanit', sans-serif;
 }
+
+.txt {
+    background-color: #d9b8f5;
+    font-size: calc(16px + (20 - 16) * ((100vw - 576px) / (1600 - 576)));
+}

@@ -1,4 +1,4 @@
-let requestURL = 'member.json';
+let requestURL = 'result.json';
 let request = new XMLHttpRequest();
 request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
@@ -36,7 +36,7 @@ function dataReportStatus(data) {
         firstRow += "<div class='card'><img class='card-img-top' src='" + data[i].img +"'>";
         firstRow += "<div class='card-body'><p class='card-title'><span class='badge badge-" + badge + "'>";
         firstRow += data[i].no + "</span>" + " " + data[i].name + "</p>";
-        firstRow += "<p class='card-text'>" + data[i].team + "</p></div></div></div>"
+        firstRow += "<p class='card-text'>" + data[i].score + " คะแนน</p></div></div></div>"
     }
 
     for (let j = 3; j < data.length; j++) {
@@ -44,7 +44,7 @@ function dataReportStatus(data) {
         secondRow += "<div class='card'><img class='card-img-top' src='" + data[j].img +"'>";
         secondRow += "<div class='card-body'><p class='card-title'><span class='badge badge-secondary'>" + data[j].no;
         secondRow += "</span>" + " " + data[j].name + "</p>";
-        secondRow += "<p class='card-text'>" + data[j].team + "</p></div></div></div>"
+        secondRow += "<p class='card-text'>" + data[j].score + " คะแนน</p></div></div></div>"
     }
 
     document.getElementById("card-1").innerHTML = firstRow;
