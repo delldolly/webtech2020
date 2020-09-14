@@ -21,16 +21,26 @@ function dataReportStatus(data) {
             var order = "order-3 order-md-3";
         }
 
-        firstRow += "<div class='col-12 col-md-3 " + order + "'>";
+        if (i == 0) {
+            var badge = "danger";
+        } else if (i == 1) {
+            var badge = "warning";
+        } else if (i == 2) {
+            var badge = "success";
+        }
+
+        firstRow += "<div class='col-12 col-md-4 py-3 " + order + "'>";
         firstRow += "<div class='card'><img class='card-img-top' src='" + data[i].img +"'>";
-        firstRow += "<div class='card-body'><p class='card-title'><span class='badge badge-info'>" + data[i].no + "</span>" + " " + data[i].name + "</p>";
+        firstRow += "<div class='card-body'><p class='card-title'><span class='badge badge-" + badge + "'>";
+        firstRow += data[i].no + "</span>" + " " + data[i].name + "</p>";
         firstRow += "<p class='card-text'>" + data[i].team + "</p></div></div></div>"
     }
 
     for (let j = 3; j < data.length; j++) {
-        secondRow += "<div class='col-12 col-md-2'>";
+        secondRow += "<div class='col-12 col-md-3 py-3'>";
         secondRow += "<div class='card'><img class='card-img-top' src='" + data[j].img +"'>";
-        secondRow += "<div class='card-body'><p class='card-title'><span class='badge badge-info'>" + data[j].no + "</span>" + " " + data[j].name + "</p>";
+        secondRow += "<div class='card-body'><p class='card-title'><span class='badge badge-secondary'>" + data[j].no;
+        secondRow += "</span>" + " " + data[j].name + "</p>";
         secondRow += "<p class='card-text'>" + data[j].team + "</p></div></div></div>"
     }
 
