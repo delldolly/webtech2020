@@ -16,6 +16,11 @@
         crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -39,17 +44,20 @@
                 </div>
             </div>
         </form>
+        <div class="text-center bg-secondary text-white px-3 py-4">
+            <?php
+            if(isset($_POST['submit'])){
+                $wei = $_POST['weight'];
+                $hei = $_POST['height'];
+                $hei_cal = $hei / 100;
+                $bmi = $wei / ($hei_cal * $hei_cal);
+                echo "<h2>BMI is " . number_format($bmi, 2) . "</h2>";
+            }
+            ?>
+        </div>
+        
     </div>
     
-    <?php
-    if(isset($_POST['submit'])){
-        $wei = $_POST['weight'];
-        $hei = $_POST['height'];
-        $hei_cal = $hei / 100;
-        $bmi = $wei / ($hei_cal * $hei_cal);
-        echo "<h2 class='text-center'>BMI is " . number_format($bmi, 2) . "</h2>";
-
-    }
-    ?>
+    
 </body>
 </html>
