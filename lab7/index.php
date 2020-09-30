@@ -24,7 +24,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container mt-4 text-center">
+    <div class="container mt-5 text-center">
         <form action="index.php" method="post">
             <div class="form-row">
                 <div class="col-md-2">
@@ -44,17 +44,16 @@
                 </div>
             </div>
         </form>
-        <div class="text-center bg-secondary text-white px-3 py-4">
-            <?php
-            if(isset($_POST['submit'])){
-                $wei = $_POST['weight'];
-                $hei = $_POST['height'];
-                $hei_cal = $hei / 100;
-                $bmi = $wei / ($hei_cal * $hei_cal);
-                echo "<h2>BMI is " . number_format($bmi, 2) . "</h2>";
-            }
-            ?>
-        </div>
+        <?php
+        if(isset($_POST['submit'])){
+            $wei = $_POST['weight'];
+            $hei = $_POST['height'];
+            $hei_cal = $hei / 100;
+            $bmi = $wei / ($hei_cal * $hei_cal);
+            echo "<div class='text-center bg-secondary text-white px-3 py-4'>";
+            echo "<h2>BMI is " . number_format($bmi, 2) . "</h2></div>";
+        }
+        ?>
         
     </div>
     
