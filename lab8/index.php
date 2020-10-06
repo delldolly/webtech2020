@@ -19,16 +19,18 @@
     <style>
         body {
             font-family: 'Kanit', sans-serif;
+            /* background: rgb(243,180,247);
+            background: linear-gradient(0deg, rgba(243,180,247,1) 0%, rgba(251,221,255,1) 32%, rgba(196,244,255,1) 100%); */
         }
     </style>
-    <title>Document</title>
+    <title>GE 252rd Single</title>
 </head>
 <body>
     <div class="container-fluid">
         <div class="text-center font-weight-bold mt-4 mb-4">
             <h5 style="color: #e08cff;">BMX49 252rd single</h5>
             <h1>HAANG KRENANG GENERAL ELECTION</h1>
-            <h5 style="color: #80e2b9;">Final Result</h5>
+            <h5 style="color: #10e7a0;">Final Result</h5>
         </div>
         <?php
         $json_data = file_get_contents('result.json');
@@ -52,14 +54,15 @@
                 </div>
             </div>
         </form>
-        <div class="row justify-content-center align-items-center mt-5">
+        <div class="row justify-content-center align-items-center mt-4">
             <?php
             if(isset($_POST['submit'])) {
                 if(!empty($_POST['number'])) {
                     $num = $_POST['number'] - 1;
                     echo "<div class='col-12 col-md-4'>";
                     echo "<div class='card rounded'><img class='card-img-top' src='" . $data[$num]["img"] . "'>";
-                    echo "<div class='card-body'><p class='card-title'>" . $data[$num]["name"] . "</p>";
+                    echo "<div class='card-body'><h4 class='card-title'>" . $data[$num]["name"] . "</h4>";
+                    echo "<h6 class='card-subtitle mb-2 text-danger'>อันดับ " . $data[$num]["no"] . "</h6>";
                     echo "<p class='card-text'>" . $data[$num]["score"] . " คะแนน</p></div></div></div>";
                 } else {
                     echo 'Please select the value.';
