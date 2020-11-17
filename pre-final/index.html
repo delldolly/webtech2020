@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Final Online 2020 | Web Technology</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+        body {
+            font-family: 'Itim', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid bg-warning p-5">
+        <h2 class="text-center mb-3">Pre-Final Online 2020 | Web Technology</h2>
+        <p class="text-center mb-3">โจทย์มีทั้งหมด 2 ข้อ เป็นรูปแบบโจทย์ต่อเนื่อง</p>
+        <p class="text-center mb-3">(เพื่อความท้าทาย และเป็นการเตรียมความพร้อม อย่าลอกกันนะครับ ทำให้เต็มที่)</p>
+        <h3 class="text-center" id="countdown"></h3>
+    </div>
+    <p class="text-center bg-dark text-white p-3">ใช้ไฟล์จาก url/ezquiz.json</p>
+    <div class="container my-5" id="ex1">
+        <h3>1# EzQuiz</h3>
+        <p>ให้นักศึกษาสร้างเว็บไซต์​​แสดงข้อมูลเพลงจาก Spotify ในรูปแบบ Card และแสดงข้อมูลดังนี้</p>
+        <ul>
+            <li>โดยให้แสดงภาพขนาด 640</li>
+            <li>ชื่อเพลง</li>
+            <li>ชื่อศิลปิน</li>
+            <li>วันปล่อยเพลง</li>
+            <li>และจำนวนประเทศที่ปล่อยเพลง</li>
+        </ul>
+        <img src="001.png" class="w-100">
+        <p class="text-center mt-3">ภาพตัวอย่างการแสดงผล</p>
+    </div>
+
+    <div class="container my-5" id="ex2">
+        <h3>2# HdQuiz</h3>
+        <p>หลังจากทำ EzQuiz เสร็จแล้ว ในข้อนี้ให้ทำปุ่ม Search ค้นหาเพลงจากชื่อเพลง หรือชื่อศิลปิน โดยมีข้อกำหนดดังนี้
+        </p>
+        <ul>
+            <li>กรณีเปิดครั้งแรกให้แสดงทุกเพลง</li>
+            <li>กรณีค้นหาแล้วไม่เจอ ให้ขึ้นว่า Not Found</li>
+            <li>และให้แสดงว่าค้นหาเจอทั้งหมดกี่รายการ (optional)</li>
+        </ul>
+        <img src="002.png" class="w-100">
+        <p class="text-center mt-3">ภาพตัวอย่างการแสดงผล</p>
+    </div>
+
+    <script>
+
+        var countDownDate = new Date("Nov 18, 2020 22:00:00").getTime();
+
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = "เหลือเวลาอีก " + days + " วัน " + hours + " ชั่วโมง "
+                + minutes + " นาที " + seconds + " วินาที ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "หมดเวลา";
+                document.querySelector('#ex1').style.display = 'none'
+                document.querySelector('#ex2').style.display = 'none'
+            }
+        }, 1000);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
