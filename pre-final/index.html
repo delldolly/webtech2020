@@ -61,7 +61,7 @@
 
     <script>
 
-        var countDownDate = new Date("Nov 18, 2020 22:00:00").getTime();
+        var countDownDate = new Date("Dec 2, 2020 00:00:00").getTime();
 
         var x = setInterval(function () {
             var now = new Date().getTime();
@@ -71,14 +71,14 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
             document.getElementById("countdown").innerHTML = "เหลือเวลาอีก " + days + " วัน " + hours + " ชั่วโมง "
-                + minutes + " นาที " + seconds + " วินาที ";
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "หมดเวลา";
-                document.querySelector('#ex1').style.display = 'none'
-                document.querySelector('#ex2').style.display = 'none'
-                document.getElementById('time-up').style.display = 'flex'
-            }
+                + minutes + " นาที " + seconds + " วินาที จะถึงวันสอบไฟนอล";
+            // if (distance < 0) {
+            //     clearInterval(x);
+            //     document.getElementById("countdown").innerHTML = "หมดเวลา";
+            //     document.querySelector('#ex1').style.display = 'none'
+            //     document.querySelector('#ex2').style.display = 'none'
+            //     document.getElementById('time-up').style.display = 'flex'
+            // }
         }, 1000);
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
